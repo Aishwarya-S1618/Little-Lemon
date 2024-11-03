@@ -113,12 +113,17 @@
     margin: 0;
   }
   
-  .footer-section ul li,
-  .footer-section p {
+  .footer-section ul li{
+    margin: 0.7rem 0;
+    color: #333;
+    font-size: 0.9rem !important;
+  }
+ .footer-section ul li a{
+    text-decoration: none;
     margin: 0.5rem 0;
     color: #333;
-    font-size: 0.9rem;
-  }
+    font-size: 0.9rem !important;
+  } 
   
   /* ==========================================================================
      Mobile Menu Styles
