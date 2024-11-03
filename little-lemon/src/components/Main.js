@@ -1,11 +1,12 @@
-function Main() {
-    return (
+import Hero  from './Hero';
+import Specials  from './Specials';
+import CustomersSay  from './CustomersSay';
+import About  from './About';
+const Main = () =>
       <>
-      <header></header>
-      <nav></nav>
-      <main></main>
-      <footer></footer>
+      <Hero/>
+      <Specials/>
+      <CustomersSay/>
+      <About/>
       </>
-    );
-  }
 export default Main;
