@@ -26,17 +26,17 @@ const Footer = () => {
       title: 'Contact',
       items: [
         { text: '123 Little Lemon St, Chicago', href: null },
-        { text: '(555) 123-4567', href: 'tel:+15551234567' },
-        { text: 'contact@littlelemon.com', href: 'mailto:contact@littlelemon.com' },
+        { text: '(555) 123-4567', href: null },
+        { text: 'contact@littlelemon.com', href: null  },
       ],
     },
     {
       id: 'social',
       title: 'Social Media Links',
       items: [
-        { text: 'Facebook', href: 'https://facebook.com/littlelemon' },
-        { text: 'Instagram', href: 'https://instagram.com/littlelemon' },
-        { text: 'Twitter', href: 'https://twitter.com/littlelemon' },
+        { text: 'Facebook', href: 'https://facebook.com' },
+        { text: 'Instagram', href: 'https://instagram.com' },
+        { text: 'Twitter', href: 'https://twitter.com' },
       ],
     },
   ];
