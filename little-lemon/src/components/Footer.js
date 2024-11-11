@@ -1,11 +1,6 @@
-// Footer.js
 import React from 'react';
 import Logo from '../images/Logo2.png';
 
-/**
- * Footer component containing company information and links
- * @component
- */
 const Footer = () => {
   // Footer content configuration
   const footerSections = [
@@ -41,11 +36,6 @@ const Footer = () => {
     },
   ];
 
-  /**
-   * Handle smooth scrolling for footer navigation
-   * @param {string} href - Target section ID
-   * @param {Event} e - Click event
-   */
   const handleFooterNavClick = (href, e) => {
     if (href?.startsWith('#')) {
       e.preventDefault();
@@ -59,16 +49,12 @@ const Footer = () => {
     }
   };
 
-  /**
-   * Render a footer section
-   * @param {Object} section - Section configuration object
-   */
   const renderFooterSection = ({ id, title, items }) => (
     <div key={id} className="footer-section">
       <h3>{title}</h3>
-      <ul>
+      <ul className='sectiontitle'>
         {items.map((item, index) => (
-          <li key={`${id}-${index}`}>
+          <li className="paragraphtext" key={`${id}-${index}`}>
             {item.href ? (
               <a
                 href={item.href}

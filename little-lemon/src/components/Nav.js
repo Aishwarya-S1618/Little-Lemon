@@ -1,10 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Logo from '../images/Logo.svg';
-import { FaBars, FaTimes } from 'react-icons/fa'; // Make sure to install react-icons: npm install react-icons
+import { FaBars, FaTimes } from 'react-icons/fa';
 
-/*
- * Navigation- menu bar component for the application.
- */
 const Nav = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isMobileView, setIsMobileView] = useState(window.innerWidth <= 550);
@@ -18,9 +15,7 @@ const Nav = () => {
     { href: '#orderonline', text: 'Order Online' },
     { href: '#login', text: 'Login' },
   ];
-/**
- * Handle window resize events
-*/
+/*Handle window resize events*/
   useEffect(() => {
     const handleResize = () => {
       setIsMobileView(window.innerWidth <= 550);
@@ -51,7 +46,7 @@ const Nav = () => {
             </button>
             {isMenuOpen && (
               <div className="mobile-menu">
-                <ul className="mobile-nav-links">
+                <ul className="mobile-nav-links sectiontitle">
                   {links.map((link, index) => (
                     <li key={index} className="mobile-nav-item">
                       <a
@@ -68,7 +63,7 @@ const Nav = () => {
             )}
           </>
         ) : (
-          <ul className="nav-links">
+          <ul className="nav-links sectiontitle">
             {links.map((link, index) => (
               <li key={index} className="nav-item">
                 <a href={link.href} className="nav-link">
