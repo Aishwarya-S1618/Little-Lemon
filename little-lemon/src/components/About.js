@@ -3,7 +3,7 @@ import MnA1 from "../images/MandA-A.jpg";
 import MnA2 from "../images/MandA-B.jpg";
 const About = () => {
   return (
-    <div className="about-container">
+    <div id="about" className="about-container">
       <div className="about-text">
         <h1 className="typefaces">Little Lemon</h1>
         <h2 className="subtitle">Chicago</h2>

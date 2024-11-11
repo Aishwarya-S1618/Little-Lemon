@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import Logo from '../images/Logo.svg';
 import { FaBars, FaTimes } from 'react-icons/fa';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 const Nav = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isMobileView, setIsMobileView] = useState(window.innerWidth <= 550);
-
+  const navigate = useNavigate();
+  const location = useLocation();
 // Navigation configuration
   const links = [
     { href: '#home', text: 'Home' },
@@ -32,8 +34,14 @@ const Nav = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  const handleNavClick = (href) => {
+    if (location.pathname !== '/') {
+      navigate(`/${href}`);
+    }
+  };
+
   return (
-    <nav className="nav">
+    <nav id="home" className="nav">
       <div className="nav-container">
         <div className="nav-logo">
           <img src={Logo} alt="Logo" />
@@ -47,12 +55,12 @@ const Nav = () => {
             {isMenuOpen && (
               <div className="mobile-menu">
                 <ul className="mobile-nav-links sectiontitle">
-                  {links.map((link, index) => (
+                {links.map((link, index) => (
                     <li key={index} className="mobile-nav-item">
                       <a
                         href={link.href}
                         className="mobile-nav-link"
-                        onClick={() => setIsMenuOpen(false)}
+                        onClick={() => handleNavClick(link.href)}
                       >
                         {link.text}
                       </a>
@@ -66,7 +74,7 @@ const Nav = () => {
           <ul className="nav-links sectiontitle">
             {links.map((link, index) => (
               <li key={index} className="nav-item">
-                <a href={link.href} className="nav-link">
+                <a href={link.href} className="nav-link" onClick={() => handleNavClick(link.href)}>
                   {link.text}
                 </a>
               </li>
