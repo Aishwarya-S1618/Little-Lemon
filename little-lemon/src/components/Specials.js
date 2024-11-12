@@ -30,11 +30,11 @@ const items = [
 
 export default function Specials() {
   return (
-  <main id="menu">
+  <>
   <div className= "specials">
   <span className="specials-nav">
    <span className='typefaces'> This weeks specials !</span>
-   <button id="orderonline" className="reserve-button leadtext">Online Menu</button>
+   <button className="reserve-button leadtext">Online Menu</button>
   </span>
     <main className="specials-container">
       {items.map((item, index) => (
@@ -65,7 +65,7 @@ export default function Specials() {
       ))}
     </main>
     </div>
-  </main>
+  </>
   );
 }
 
