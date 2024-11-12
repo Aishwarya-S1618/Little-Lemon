@@ -466,6 +466,10 @@
   display: flex;
   flex-direction: column;
 }
+.guest-inputs{
+  display:flex;
+  justify-content: space-evenly;
+}
 
 .booking-form button {
   padding: 10px 20px;
