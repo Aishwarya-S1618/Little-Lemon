@@ -22,7 +22,7 @@ const BookingForm = ({ availableTimes, formData, onFormChange }) => {
     };
 
     filterAvailableTimes();
-  }, [formData.date, availableTimes]);
+  }, [formData.date, today, availableTimes]);
 
   const convertTo24HourFormat = (time) => {
     const [hour, modifier] = time.split(' ');
@@ -44,14 +44,14 @@ const BookingForm = ({ availableTimes, formData, onFormChange }) => {
       newErrors.time = 'Please select time.';
         isValid = false;
     }
-    if (formData.date === today && formData.time) {
-      const selectedTimeHour = convertTo24HourFormat(formData.time);
-      const currentTime = new Date().getHours();
-      if (selectedTimeHour <= currentTime) {
-        newErrors.time = 'Please select a future time.';
-        isValid = false;
-      }
-    }
+    // if (formData.date === today && formData.time) {
+    //   const selectedTimeHour = convertTo24HourFormat(formData.time);
+    //   const currentTime = new Date().getHours();
+    //   if (selectedTimeHour <= currentTime) {
+    //     newErrors.time = 'Please select a future time.';
+    //     isValid = false;
+    //   }
+    // }
     const totalGuests = parseInt(formData.guests1 || 0) + parseInt(formData.guests2 || 0);
     if (totalGuests > 500) {
       newErrors.guests = 'The maximum number of guests is 500.';
