@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { FaExclamationCircle } from 'react-icons/fa';
 
-const BookingForm = ({ availableTimes, formData, onFormChange }) => {
+const BookingForm = ({ availableTimes,  formData,  onFormChange,  onBookingSubmit}) => {
   const [filteredTimes, setFilteredTimes] = useState(availableTimes);
   const [errors, setErrors] = useState({ date: '', time: '', guests: '' });
-
   const today = new Date().toISOString().split("T")[0];
 
   useEffect(() => {
@@ -77,7 +76,13 @@ const BookingForm = ({ availableTimes, formData, onFormChange }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (validateForm()) {
-      console.log("Submitted form data:", formData);
+      e.preventDefault();
+      onBookingSubmit(formData);  // Submit the form data
+      onFormChange('date', '');
+      onFormChange('time', '');
+      onFormChange('guests1', '');
+      onFormChange('guests2', '');
+      onFormChange('occasion', 'None');
     }
   };
 

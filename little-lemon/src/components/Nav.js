@@ -13,7 +13,7 @@ const Nav = () => {
     { href: '#home', text: 'Home' },
     { href: '#about', text: 'About' },
     { href: '#menu', text: 'Menu' },
-    { href: '#reservations', text: 'Reservations' },
+    { href: '/booking-data', text: 'Reservations' },
     { href: '#orderonline', text: 'Order Online' },
     { href: '#login', text: 'Login' },
   ];

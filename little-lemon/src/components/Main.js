@@ -13,7 +13,6 @@ const Main = () => {
       <Specials />
       <CustomersSay />
       <About />
-
     </>
   );
 };
