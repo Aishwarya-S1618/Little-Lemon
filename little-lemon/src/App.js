@@ -21,12 +21,12 @@ import React, { useState, useReducer, useEffect } from 'react';
 //   });
 // };
 
-const initializeTimes = () => {
+export const initializeTimes = () => {
   const today = new Date();
   return window.fetchAPI(today);  // Fetch available times for today's date
 };
 
-const timeReducer = (state, action) => {
+export const timeReducer = (state, action) => {
   if (action.type === 'UPDATE_TIMES') {
     const selectedDate = new Date(action.payload);
     return window.fetchAPI(selectedDate);  // Fetch times for selected date
@@ -53,6 +53,7 @@ const App = () => {
 
   const [availableTimes, dispatch] = useReducer(timeReducer, [], initializeTimes);
   const handleFormChange = (field, value) => {
+    ////console.log(`onFormChange called with ${field}: ${value}`);
     setFormData((prevData) => ({
       ...prevData,
       [field]: value,
@@ -65,7 +66,7 @@ const App = () => {
     localStorage.removeItem('bookingData');
     setBookingData([]);
   };
-  // console.log("in App ", formData, "Data",bookingData);
+  // ////console.log("in App ", formData, "Data",bookingData);
   return (
     <>
       <Router>

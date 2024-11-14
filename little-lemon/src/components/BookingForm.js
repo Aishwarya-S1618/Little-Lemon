@@ -37,10 +37,12 @@ const BookingForm = ({ availableTimes,  formData,  onFormChange,  onBookingSubmi
 
     if (formData.date < today) {
       newErrors.date = 'You cannot select a past date.';
+      //console.log("date not right")
       isValid = false;
     }
     if(formData.time ===''){
       newErrors.time = 'Please select time.';
+      //console.log("time error")
         isValid = false;
     }
     // if (formData.date === today && formData.time) {
@@ -51,13 +53,15 @@ const BookingForm = ({ availableTimes,  formData,  onFormChange,  onBookingSubmi
     //     isValid = false;
     //   }
     // }
-    const totalGuests = parseInt(formData.guests1 || 0) + parseInt(formData.guests2 || 0);
-    if (totalGuests > 500) {
-      newErrors.guests = 'The maximum number of guests is 500.';
+    //const totalGuests = parseInt(formData.guests1 || 0) + parseInt(formData.guests2 || 0);
+    if (formData.guests1> 10 || formData.guests2>10) {
+      newErrors.guests = 'The maximum number of guests per reservation is 10';
+      //console.log("guests are 10+")
       isValid = false;
     }
     if (parseInt(formData.guests1 || 0) === 0) {
       newErrors.guests = 'Adults cannot be 0';
+      //console.log("adults are 0 invalid")
       isValid = false;
     }
 
@@ -69,20 +73,25 @@ const BookingForm = ({ availableTimes,  formData,  onFormChange,  onBookingSubmi
     const { name, value } = e.target;
     onFormChange(name, value);
     setErrors({ ...errors, [name]: '' });
-    console.log(`Field changed: ${name}, New Value: ${value}`); // Log field changes
+    //console.log(`Field changed: ${name}, New Value: ${value}, Error: ${errors.date}, ${errors.time}, ${errors.guests}`); // Log field changes
   };
 
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (validateForm()) {
-      e.preventDefault();
+    const success = validateForm();
+    //console.log(`success: ${success}`)
+    if (success) {
+      //console.log("submitting data", formData)
       onBookingSubmit(formData);  // Submit the form data
       onFormChange('date', '');
       onFormChange('time', '');
-      onFormChange('guests1', '');
-      onFormChange('guests2', '');
+      onFormChange('guests1', '1');
+      onFormChange('guests2', '0');
       onFormChange('occasion', 'None');
+    }
+    else{
+      //console.log("invalid data",formData, errors)
     }
   };
 
@@ -128,7 +137,7 @@ const BookingForm = ({ availableTimes,  formData,  onFormChange,  onBookingSubmi
           placeholder="Adults"
           value={formData.guests1}
           min="0"
-          max="500"
+          max="10"
           onChange={handleInputChange}
           required
         />
@@ -139,7 +148,7 @@ const BookingForm = ({ availableTimes,  formData,  onFormChange,  onBookingSubmi
           placeholder="Children"
           value={formData.guests2}
           min="0"
-          max="500"
+          max="10"
           onChange={handleInputChange}
         />
       </div>

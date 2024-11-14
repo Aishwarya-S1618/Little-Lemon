@@ -9,7 +9,7 @@ const BookingPage = ({availableTimes, formData,  onFormChange, liftUpBookingData
     // Call the submitAPI to simulate an API submission
     const success = await window.submitAPI(formData);
     if (success) {
-      console.log('Booking submission', formData);
+      //console.log('Booking submission', formData);
       liftUpBookingData({
         id: Date.now(),  // Unique ID based on timestamp
         date: formData.date,

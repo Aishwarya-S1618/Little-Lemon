@@ -16,7 +16,7 @@ const Hero =() =>{
             </Link>
         </div>
         <div className='hero-image-container'>
-        <img src={HeroImage} alt="Resturant Food" classname="hero-image"/>
+        <img src={HeroImage} alt="Resturant Food" className="hero-image"/>
         </div>
     </main>
 
