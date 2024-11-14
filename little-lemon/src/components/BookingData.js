@@ -1,6 +1,6 @@
 import React from 'react';
 
-const BookingData = ({ bookingData }) => {
+const BookingData = ({ bookingData , clearBookings}) => {
   return (
     <div className="booking-list-page">
       <h2 className='subtitle'>Booking List</h2>
@@ -28,6 +28,7 @@ const BookingData = ({ bookingData }) => {
           ))}
         </tbody>
       </table>
+      <button className='reserve-button' onClick={clearBookings}>Clear All Bookings</button>
     </div>
   );
 };
