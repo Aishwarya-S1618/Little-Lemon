@@ -1,10 +1,7 @@
 import React from 'react';
 import Logo from '../images/Logo2.png';
-import  {useNavigate} from 'react-router-dom';
 
 const Footer = () => {
-  const navigate = useNavigate();
-
   // Footer content configuration
   const footerSections = [
     {
@@ -25,7 +22,7 @@ const Footer = () => {
       items: [
         { text: '123 Little Lemon St, Chicago', href: null },
         { text: '(555) 123-4567', href: null },
-        { text: 'contact@littlelemon.com', href: null },
+        { text: 'contact@littlelemon.com', href: null  },
       ],
     },
     {
@@ -39,37 +36,23 @@ const Footer = () => {
     },
   ];
 
-  // Footer click handler for navigating to sections
   const handleFooterNavClick = (href, e) => {
     if (href?.startsWith('#')) {
       e.preventDefault();
-      if (window.location.pathname !== '/') {
-        navigate('/');
-        setTimeout(() => {
-          const element = document.getElementById(href.substring(1));
-          if (element) {
-            element.scrollIntoView({
-              behavior: 'smooth',
-              block: 'start',
-            });
-          }
-        }, 100); // Delay to ensure DOM is loaded after navigation
-      } else {
-        const element = document.getElementById(href.substring(1));
-        if (element) {
-          element.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start',
-          });
-        }
+      const element = document.getElementById(href.substring(1));
+      if (element) {
+        element.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start',
+        });
       }
     }
   };
 
   const renderFooterSection = ({ id, title, items }) => (
     <div key={id} className="footer-section">
-      <h3 className="sectiontitle">{title}</h3>
-      <ul>
+      <h3>{title}</h3>
+      <ul className='sectiontitle'>
         {items.map((item, index) => (
           <li className="paragraphtext" key={`${id}-${index}`}>
             {item.href ? (
@@ -101,5 +84,6 @@ const Footer = () => {
     </footer>
   );
 };
+
 
 export default Footer;
