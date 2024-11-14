@@ -46,7 +46,6 @@ const App = () => {
     const savedData = localStorage.getItem('bookingData');
     return savedData ? JSON.parse(savedData) : [];
   });
-
   // Store updated bookingData in localStorage
   useEffect(() => {
     localStorage.setItem('bookingData', JSON.stringify(bookingData));
@@ -62,6 +61,10 @@ const App = () => {
   const liftUpBookingData =(data)=>{
     setBookingData([...bookingData, data]);
   }
+  const clearBookings = () => {
+    localStorage.removeItem('bookingData');
+    setBookingData([]);
+  };
   // console.log("in App ", formData, "Data",bookingData);
   return (
     <>
@@ -85,6 +88,7 @@ const App = () => {
             element={
               <BookingData
                 bookingData={bookingData}
+                clearBookings={clearBookings}
               />
             }
           />
