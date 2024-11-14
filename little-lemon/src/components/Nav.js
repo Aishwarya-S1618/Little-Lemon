@@ -8,11 +8,11 @@ const Nav = () => {
 
 // Navigation configuration
   const links = [
-    { href: '#home', text: 'Home' },
-    { href: '#about', text: 'About' },
-    { href: '#menu', text: 'Menu' },
+    { href: '/#home', text: 'Home' },
+    { href: '/#about', text: 'About' },
+    { href: '/#menu', text: 'Menu' },
     { href: '/booking-data', text: 'Reservations' },
-    { href: '#orderonline', text: 'Order Online' },
+    { href: '/#orderonline', text: 'Order Online' },
     { href: '#login', text: 'Login' },
   ];
 /*Handle window resize events*/

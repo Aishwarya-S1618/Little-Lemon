@@ -1,8 +1,9 @@
 import BookingForm from './BookingForm';
+import { useNavigate } from 'react-router-dom';
 import '../api.js';
 
 const BookingPage = ({availableTimes, formData,  onFormChange, liftUpBookingData}) => {
-
+  const navigate = useNavigate();
   // Function to handle form data updates and adding new bookings to bookingData
   const handleBookingSubmit = async (formData) => {
     // Call the submitAPI to simulate an API submission
@@ -17,6 +18,7 @@ const BookingPage = ({availableTimes, formData,  onFormChange, liftUpBookingData
         guests2: formData.guests2,
         occasion: formData.occasion,
       });
+      navigate('/confirmation');
     } else {
       console.error('Booking submission failed');
     }

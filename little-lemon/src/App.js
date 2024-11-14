@@ -5,6 +5,7 @@ import Nav from './components/Nav';
 import Main from './components/Main';
 import BookingData from './components/BookingData.js';
 import BookingPage from './components/BookingPage';
+import BookingConfirmation from './components/BookingConfirmation';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import React, { useState, useReducer, useEffect } from 'react';
 
@@ -87,6 +88,7 @@ const App = () => {
               />
             }
           />
+          <Route path="/confirmation" element={<BookingConfirmation />} />
         </Routes>
         <Footer />
       </Router>
