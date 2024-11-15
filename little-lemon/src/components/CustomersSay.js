@@ -35,26 +35,27 @@ const cardData = [
 
 const CustomersSay = () => (
   <main className='Testimonials'>
-    <h1 className='leadtext'>Testimonials</h1>
-  <div className="rating-cards-container">
+    <h1 className='leadtext' id="testimonials-heading">Testimonials</h1>
+  <section className="rating-cards-container" aria-labelledby="testimonials-heading">
     {cardData.map((item, index) => (
-      <Card key={index} className="rating-card">
-        <Typography className="rating">{item.rating}</Typography>
+      <Card key={index} className="rating-card" role="article">
+        <Typography className="rating" aria-label={`Rating: ${item.rating}`}>{item.rating}</Typography>
         <CardMedia
           component="img"
           alt={item.name}
           image={item.image}
           className="card-image"
+          aria-label={`Image of ${item.name}`}
         />
-        <Typography className="card-name">
+        <Typography className="card-name" role="heading" aria-level="3">
           {item.name}
         </Typography>
-        <Typography variant="body2" className="card-review">
+        <Typography variant="body2" className="card-review" aria-describedby={`review-${index}`}>
           {item.review}
         </Typography>
       </Card>
     ))}
-  </div>
+  </section>
   </main>
 );
 

@@ -25,15 +25,15 @@ const BookingPage = ({availableTimes, formData,  onFormChange, liftUpBookingData
   };
 
   return (
-    <div className="booking-page">
-      <span className="typefaces">Reserve a Table</span>
+    <main className="booking-page" >
+      <h1 className="typefaces" aria-label="Little Lemon Table Reservation">Reserve a Table</h1>
       <BookingForm
         availableTimes={availableTimes}
         formData={formData}
         onFormChange={onFormChange}
         onBookingSubmit={handleBookingSubmit}
       />
-    </div>
+    </main>
   );
 };
 
