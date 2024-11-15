@@ -1,4 +1,4 @@
-import BookingForm from './BookingForm';
+import BookingForm from './BookingForm.js';
 import { useNavigate } from 'react-router-dom';
 import '../api.js';
 

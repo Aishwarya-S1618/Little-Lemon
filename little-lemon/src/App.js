@@ -9,17 +9,6 @@ import BookingConfirmation from './components/BookingConfirmation';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import React, { useState, useReducer, useEffect } from 'react';
 
-// // Helper function to wait until window.fetchAPI is available
-// const waitForFetchAPI = () => {
-//   return new Promise((resolve) => {
-//     const interval = setInterval(() => {
-//       if (typeof window.fetchAPI === 'function') {
-//         clearInterval(interval);
-//         resolve(window.fetchAPI);
-//       }
-//     }, 100);  // Check every 100ms
-//   });
-// };
 
 export const initializeTimes = () => {
   const today = new Date();
@@ -66,7 +55,6 @@ const App = () => {
     localStorage.removeItem('bookingData');
     setBookingData([]);
   };
-  // ////console.log("in App ", formData, "Data",bookingData);
   return (
     <>
       <Router>
