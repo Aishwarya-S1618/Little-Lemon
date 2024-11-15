@@ -486,6 +486,10 @@
   background-color: #495E57;
   color:#EDEFEE;
 }
+.booking-form button:disabled {
+  background-color: #F4CE1488;
+  color:#33333388;
+}
 
 .booking-list-page {
   padding: 1rem;
