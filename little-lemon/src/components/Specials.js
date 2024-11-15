@@ -9,7 +9,7 @@ import greekSalad from '../images/greek_salad.jpg';
 import bruchetta from '../images/bruchetta.svg';
 import lemonDessert from '../images/lemon_dessert.jpg';
 import { MdDeliveryDining } from "react-icons/md";
-
+// Using cards from material ui to display popular dishes of the resturant
 const items = [
   {
     title: "Greek Salad",

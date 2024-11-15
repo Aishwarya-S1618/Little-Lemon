@@ -1,5 +1,5 @@
 import React from 'react';
-
+//This Page is rendered on click of reservations button to display all booking info in a table
 const BookingData = ({ bookingData , clearBookings}) => {
   return (
     <main className="booking-list-page">

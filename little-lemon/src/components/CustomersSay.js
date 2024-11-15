@@ -5,7 +5,7 @@ import user2 from '../images/user2.jpg';
 import user3 from '../images/user3.jpg';
 import user4 from '../images/user4.jpg';
 
-// Sample data for cards
+// Testimonials section of the Home page
 const cardData = [
   {
     name: "A K Marie",

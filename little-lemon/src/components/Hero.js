@@ -1,5 +1,6 @@
 import HeroImage from '../images/restauranfood.jpg';
 import { Link } from 'react-router-dom';
+//Hero section - contains the reserve a table button to navigate to booking page
 const Hero =() =>{
     return(
     <>
