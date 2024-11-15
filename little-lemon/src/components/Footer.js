@@ -1,8 +1,7 @@
 import React from 'react';
 import Logo from '../images/Logo2.png';
-
+//Footer section of the Website
 const Footer = () => {
-  // Footer content configuration
   const footerSections = [
     {
       id: 'navigation',

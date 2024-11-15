@@ -1,6 +1,6 @@
 import React from 'react';
 import { FaCheckCircle } from "react-icons/fa";
-
+//This page is rendered after a successful submission
 const BookingConfirmation = () => {
     return (
         <main className="confirmed-booking">

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { FaExclamationCircle } from 'react-icons/fa';
-
+// Child Component of BookingPage renders the form
 const BookingForm = ({ availableTimes, formData, onFormChange, onBookingSubmit }) => {
   const [filteredTimes, setFilteredTimes] = useState(availableTimes);
   const [errors, setErrors] = useState({

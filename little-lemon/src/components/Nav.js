@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Logo from '../images/Logo.svg';
 import { FaBars, FaTimes } from 'react-icons/fa';
-
+//navigation bar of the Website
 const Nav = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isMobileView, setIsMobileView] = useState(window.innerWidth <= 550);

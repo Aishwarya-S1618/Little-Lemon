@@ -1,6 +1,7 @@
 import React from "react";
 import MnA1 from "../images/MandA-A.jpg";
 import MnA2 from "../images/MandA-B.jpg";
+//About section of the website
 const About = () => {
   return (
     <section className="about-container" aria-labelledby="about-heading">
@@ -13,6 +14,7 @@ const About = () => {
         </p>
       </header>
       <aside className="about-images">
+        {/* /* Images of founders */}
       <div className="about-images-wrapper">
         <img src={MnA1} alt="Mario and Atlee" className="image am1" />
         <img src={MnA2} alt="Founders" className="image am2" />

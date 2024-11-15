@@ -1,7 +1,7 @@
 import BookingForm from './BookingForm.js';
 import { useNavigate } from 'react-router-dom';
 import '../api.js';
-
+// This page is rendered on click of reserve a table button Enables user to make a reservation
 const BookingPage = ({availableTimes, formData,  onFormChange, liftUpBookingData}) => {
   const navigate = useNavigate();
   // Function to handle form data updates and adding new bookings to bookingData

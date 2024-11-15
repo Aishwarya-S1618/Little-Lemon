@@ -9,7 +9,7 @@ import BookingConfirmation from './components/BookingConfirmation';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import React, { useState, useReducer, useEffect } from 'react';
 
-
+//The App component
 export const initializeTimes = () => {
   const today = new Date();
   return window.fetchAPI(today);  // Fetch available times for today's date

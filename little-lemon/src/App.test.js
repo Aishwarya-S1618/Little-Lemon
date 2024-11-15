@@ -1,4 +1,4 @@
-// App.test.js
+
 import { initializeTimes, timeReducer } from './App';
 import '@testing-library/jest-dom';
 
