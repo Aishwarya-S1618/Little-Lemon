@@ -141,9 +141,11 @@ const BookingForm = ({ availableTimes, formData, onFormChange, onBookingSubmit }
         min={today}
         onChange={handleInputChange}
         required
+        aria-required="true"
+        aria-describedby="date-error"
       />
       {errors.date && (
-        <p className="error-message">
+        <p id ="date-error" className="error-message" aria-live="polite">
           <FaExclamationCircle /> {errors.date}
         </p>
       )}
@@ -155,6 +157,8 @@ const BookingForm = ({ availableTimes, formData, onFormChange, onBookingSubmit }
         value={formData.time}
         onChange={handleInputChange}
         required
+        aria-required="true"
+        aria-describedby="time-error"
       >
         <option value="">Select time</option>
         {filteredTimes.map((time, index) => (
@@ -164,7 +168,7 @@ const BookingForm = ({ availableTimes, formData, onFormChange, onBookingSubmit }
         ))}
       </select>
       {errors.time && (
-        <p className="error-message">
+        <p id ="time-error" className="error-message" aria-live="polite">
           <FaExclamationCircle /> {errors.time}
         </p>
       )}
@@ -181,6 +185,8 @@ const BookingForm = ({ availableTimes, formData, onFormChange, onBookingSubmit }
           max="10"
           onChange={handleInputChange}
           required
+          aria-required="true"
+          aria-describedby="guests-error"
         />
         <input
           type="number"
@@ -191,15 +197,16 @@ const BookingForm = ({ availableTimes, formData, onFormChange, onBookingSubmit }
           min="0"
           max="10"
           onChange={handleInputChange}
+          aria-describedby="Children-guest-error"
         />
       </div>
       {errors.guests1 && (
-        <p className="error-message">
+        <p id ="guests-error" className="error-message" aria-live="polite">
           <FaExclamationCircle /> {errors.guests1}
         </p>
       )}
       {errors.guests2 && (
-        <p className="error-message">
+        <p id ="Children-guest-error" className="error-message" aria-live="polite">
           <FaExclamationCircle /> {errors.guests2}
         </p>
       )}
@@ -210,6 +217,7 @@ const BookingForm = ({ availableTimes, formData, onFormChange, onBookingSubmit }
         value={formData.occasion}
         name="occasion"
         onChange={handleInputChange}
+        aria-label="Occasion for reservation"
       >
         <option value="None">None</option>
         <option value="Birthday">Birthday</option>
@@ -228,7 +236,8 @@ const BookingForm = ({ availableTimes, formData, onFormChange, onBookingSubmit }
             errors.time ||
             errors.guests1 ||
             errors.guests2
-        }>
+        }
+        aria-label="Submit reservation">
         Submit Reservation
       </button>
     </form>

@@ -33,7 +33,7 @@ const Nav = () => {
   };
 
   return (
-    <nav className="nav">
+    <nav className="nav" aria-label="Main Navigation">
       <div className="nav-container">
         <div className="nav-logo">
           <img src={Logo} alt="Logo" />

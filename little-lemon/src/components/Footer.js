@@ -50,8 +50,8 @@ const Footer = () => {
   };
 
   const renderFooterSection = ({ id, title, items }) => (
-    <div key={id} className="footer-section">
-      <h3>{title}</h3>
+    <div key={id} className="footer-section" aria-labelledby={`${id}-title`}>
+      <h3 id={`${id}-title`}>{title}</h3>
       <ul className='sectiontitle'>
         {items.map((item, index) => (
           <li className="paragraphtext" key={`${id}-${index}`}>
@@ -74,11 +74,11 @@ const Footer = () => {
   );
 
   return (
-    <footer className="footer" id="about">
-      <div className="footer-logo">
-        <img src={Logo} alt="Little Lemon Logo" />
+    <footer className="footer" id="footer" aria-labelledby="footer-logo">
+      <div className="footer-logo" >
+        <img src={Logo} alt="Little Lemon Logo" id="footer-logo"/>
       </div>
-      <div className="footer-links">
+      <div className="footer-links" role="contentinfo">
         {footerSections.map(renderFooterSection)}
       </div>
     </footer>

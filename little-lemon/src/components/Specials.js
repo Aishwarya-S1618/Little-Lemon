@@ -31,11 +31,11 @@ const items = [
 export default function Specials() {
   return (
   <>
-  <div className= "specials">
-  <span className="specials-nav">
-   <span className='typefaces'> This weeks specials !</span>
-   <button className="reserve-button leadtext">Online Menu</button>
-  </span>
+  <section className="specials" aria-labelledby="specials-heading">
+  <header className="specials-nav">
+   <span className='typefaces' id="specials-heading"> This weeks specials !</span>
+   <button className="reserve-button leadtext" aria-label="View online menu">Online Menu</button>
+  </header>
     <main className="specials-container">
       {items.map((item, index) => (
         <Card key={index} sx={{ display: 'flex', flexDirection: 'column', height: '100%', width: '100%', borderRadius: '16px 16px 0 0'}}>
@@ -49,22 +49,27 @@ export default function Specials() {
                 borderRadius: '16px 16px 0 0',
                 width: "calc(100% - 2px)", // Adjust width to account for border
               }}
+            aria-label={`Image of ${item.title}`}
           />
           <CardContent sx={{ flexGrow: 1 }}>
             <Typography className="sectiontitle" variant="h5" component="div">
               {item.title}
             </Typography>
-            <Typography className="paragraphtext" variant="body2" sx={styles.description}>
+            <Typography className="paragraphtext" variant="body2" sx={styles.description} aria-describedby={`description-${index}`}>
               {item.description}
             </Typography>
           </CardContent>
           <CardActions>
-            <Button size="small" sx ={styles.button}>Order a delivery <MdDeliveryDining style={{ height: '1.5rem', width: '1.5rem' }}/></Button>
+            <Button
+              size="small"
+              sx ={styles.button}
+              aria-label={`Order delivery of ${item.title}`}>
+              Order a delivery <MdDeliveryDining style={{ height: '1.5rem', width: '1.5rem' }}/></Button>
           </CardActions>
         </Card>
       ))}
     </main>
-    </div>
+    </section>
   </>
   );
 }
