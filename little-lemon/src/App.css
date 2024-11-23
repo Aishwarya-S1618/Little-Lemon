@@ -799,3 +799,66 @@
     }
 
   }
+
+  /* Login page */
+  .auth-container {
+    width: 30rem;
+    max-width:80vw;
+    margin:auto;
+    padding: 2rem;
+    background-color: #EDEFEE;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    font-family: Arial, sans-serif;
+  }
+  
+  .auth-title {
+    margin-bottom: 1rem;
+    margin-top:1.5rem;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+    text-align: left;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #495E57;
+  }
+  
+  .form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .auth-button {
+    width: 100%;
+    padding: 10px;
+    background-color: #495E57;
+    color: #EDEFEE;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .auth-button:hover {
+    background-color: #333333;
+  }
+  
+  .error {
+    color: #F44336;
+    margin-top: 5px;
+  }
+  
+  .toggle {
+    margin-top: 15px;
+    color: #495E57;
+    cursor: pointer;
+    text-decoration: underline;
+  }
